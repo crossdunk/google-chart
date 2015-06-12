@@ -195,11 +195,12 @@ function drawLineColors() {
         vAxis: {
           title: '光程厚度'
         },
+        //選擇後顯示資訊
         tooltip: {trigger: 'selection'},
         // Group selections
         // by x-value.
-        aggregationTarget: 'category',
         colors: ['#a52714', '#097138'],
+        //可複選，才能一次選擇兩個(紅色跟綠色)
         selectionMode:'multiple'
       };
 
@@ -263,11 +264,12 @@ function drawLineColors() {
         vAxis: {
           title: 'K'
         },
+        //選擇後顯示相關資訊
         tooltip: {trigger: 'selection'},
         // Group selections
         // by x-value.
-        aggregationTarget: 'category',
         colors: ['#a52714', '#097138'],
+        //可複選，才能一次選擇兩個(紅色跟綠色)
         selectionMode:'multiple'
       };
 
@@ -372,6 +374,7 @@ var tableB = [
     }else{   //輸出資料
       $("#showY").val(index);
       var row_count = index - 1850;
+      //觸發選擇顯示原點
       chart.setSelection([{row:row_count,column:1},{row:row_count,column:2}]);
       chart2.setSelection([{row:row_count,column:1},{row:row_count,column:2}]);
       $("#showAY").val(tableA[index-1850][1]); //有氣膠-濃度
